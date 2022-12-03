@@ -18,7 +18,7 @@ class ACTIONROGUELIKE_API ACharacterBase : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACharacterBase();
-
+	
 protected:
 
 	UPROPERTY(VisibleAnywhere)
@@ -27,6 +27,9 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComp;
 	
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> ProjectileClass;
+	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -34,6 +37,7 @@ protected:
 
 	void MoveRight(float Value);
 
+	void PrimaryAttack();
 	
 public:
 	// Called every frame
